@@ -12,3 +12,5 @@ Route::get('/movie/edit/{id}', 'MovieController@edit') -> name('edit');
 Route::post('/movie/update/{id}', 'MovieController@update') -> name('update');
 
 Route::get('/movie/delete/{id}', 'MovieController@delete') -> name('delete');
+
+Route::get('/movie/visible/{id}', 'MovieController@visible') -> name('visible');

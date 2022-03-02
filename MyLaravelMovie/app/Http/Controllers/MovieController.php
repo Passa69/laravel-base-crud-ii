@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 use App\Movie;
 
@@ -65,6 +67,20 @@ class MovieController extends Controller
         $movie = Movie::findOrFail($id);
 
         $movie -> delete();
+
+        return redirect() -> route('home', $movie -> id);
+    }
+
+    public function visible(Request $request, $id) {
+
+        $movie = Movie::findOrFail($id);
+
+        if($movie) { 
+
+            $movie['visible'] = false;
+
+            $movie -> update();
+        }
 
         return redirect() -> route('home', $movie -> id);
     }

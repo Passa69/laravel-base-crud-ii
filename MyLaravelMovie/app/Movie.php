@@ -10,6 +10,7 @@ class Movie extends Model
 
         'title',
         'subtitle',
-        'release_date'
+        'release_date',
+        'visible'
     ];
 }

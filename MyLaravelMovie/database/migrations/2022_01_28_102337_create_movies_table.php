@@ -19,6 +19,7 @@ class CreateMoviesTable extends Migration
             $table->string('title');
             $table->string('subtitle');
             $table->date('release_date');
+            $table->boolean('visible')->default('1');
 
             $table->timestamps();
         });

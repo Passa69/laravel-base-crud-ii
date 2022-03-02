@@ -9,6 +9,7 @@ $factory->define(Movie::class, function (Faker $faker) {
     return [
         'title' => $faker->words(1, true),
         'subtitle' => $faker->words(5, true),
-        'release_date' => $faker->date()
+        'release_date' => $faker->date(),
+        'visible' => $faker->boolean(true)
     ];
 });
